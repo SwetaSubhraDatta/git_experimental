@@ -8,9 +8,9 @@
     "code-runner.executorMap":
     {
        //linux
-        "cpp":"if [ -d \"build\" ]; then cd build && if [ ! -f \"$fileNameWithoutExt\" ]; then cmake .. && make && ./$fileNameWithoutExt; else make && ./$fileNameWithoutExt; fi; else mkdir build && cd build && cmake .. && make && ./$fileNameWithoutExt; fi"
+        //"cpp":"if [ -d \"build\" ]; then cd build && if [ ! -f \"$fileNameWithoutExt\" ]; then cmake .. && make && ./$fileNameWithoutExt; else make && ./$fileNameWithoutExt; fi; else mkdir build && cd build && cmake .. && make && ./$fileNameWithoutExt; fi"
         //windows
-        //"cpp":""
+        "cpp":"if exist build  (cd build && if not exist $fileNameWithoutExt.exe (cmake .. && mingw32-make && $fileNameWithoutExt) else (mingw32-make && $fileNameWithoutExt)) else (mkdir build && cd build && cmake .. -G\"MinGW Makefiles\" && mingw32-make && $fileNameWithoutExt)",
     },
 
 }
