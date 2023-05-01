@@ -1,10 +1,23 @@
 #include <iostream>
+#include <string>
 
-void say_hello(){
-    std::cout << "Hello, from git_experimental!\n";
-}
+using namespace std;
 
-int main(){
-    say_hello();
-    return 0;
-}
+class Github_Experimental
+{
+    public:
+    string get_version()
+    {
+        return "0.0.1";
+        
+    }
+
+    string get_author()
+    {
+        return "Rob Datta";
+    }
+
+
+};
+
+
