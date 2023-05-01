@@ -1,0 +1,6 @@
+# Read more about SSH config files: https://linux.die.net/man/5/ssh_config
+Host github.com
+    HostName github.com
+    User Rob Datta
+    IdentityFile ~/.ssh/id_rsagit config --global core.editor "code --wait"
+    
