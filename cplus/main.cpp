@@ -22,5 +22,6 @@ void understanding_cerr_clog_cout()
 int main()
 {
     understanding_cerr_clog_cout();
+    cout<<"Hello World"<<endl;
     return 0;
 }
