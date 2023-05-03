@@ -1,0 +1,51 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+    {
+        "label": "Run C++ Code on Windows",
+        "type": "shell",
+        "windows": {
+            "command": "cmd.exe",
+            "args": [
+                "/C",
+                "if exist \"build\" (cd build && if not exist \"main.exe\" (cmake -G \"MinGW Makefiles\" .. && mingw32-make && main.exe) else (mingw32-make && main.exe)) else (mkdir build && cd build && cmake -G \"MinGW Makefiles\" .. && mingw32-make && main.exe)"
+            ]
+        },
+        "group": {
+            "kind": "build"
+        },
+        "presentation": {
+            "echo": true,
+            "reveal": "always",
+            "focus": true,
+            "panel": "shared",
+            "showReuseMessage": true,
+            "clear": true
+        }
+    },
+        {
+            "label": "Run C++ Code on Linux",
+            "type": "shell",
+            "command": [
+                "if [ -d \"build\" ]; then",
+                "cd build && if [ ! -f \"main\" ]; then",
+                "cmake .. && make && ./main;",
+                "else",
+                "make && ./main;",
+                "fi;",
+                "else",
+                "mkdir build && cd build && cmake .. && make && ./main;",
+                "fi;"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+        }
+    ]
+}
